@@ -1,0 +1,52 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  .imgs {
+    justify-content: space-between;
+    width: 88%;
+    margin-bottom: 50px;
+    img {
+      padding: 5px;
+      background: white;
+      border-radius: 50%;
+    }
+    .left {
+      flex-direction: column;
+      display: flex;
+      height: 260px;
+      justify-content: space-around;
+      align-items: end;
+      img {
+        &:last-child {
+          width: 51%;
+        }
+      }
+    }
+    .right {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  h2 {
+    font-size: 24px;
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 30px;
+  }
+  p {
+    text-align: center;
+    margin: 0 auto;
+  }
+  .signup {
+    font-weight: 500;
+    .sign {
+      color: var(--color1);
+      font-weight: 700;
+    }
+  }
+}
+
+// ==

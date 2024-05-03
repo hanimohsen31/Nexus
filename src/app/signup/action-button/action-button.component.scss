@@ -1,0 +1,36 @@
+button {
+  background-color: var(--color1);
+  color: white;
+  width: 100%;
+  border: none;
+  height: 58px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px;
+  // margin: 20px auto;
+  font-size: 18px;
+  .icon {
+    // background-color: white;
+    border-radius: 50%;
+    // padding: 5px;
+  }
+  .text {
+    width: 100%;
+  }
+}
+// .phone {
+//   background-color: var(--color1);
+//   color: white;
+// }
+.google {
+  background-color: white;
+  color: black;
+  .icon {
+    margin: 0 0 0 8px;
+  }
+  .text {
+    font-weight: 600;
+  }
+}

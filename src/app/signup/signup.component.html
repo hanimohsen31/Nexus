@@ -1,0 +1,49 @@
+<div class="signup">
+  @if(screenIndex > 0){
+    <div class="progress w-100 mt-3 mb-5">
+      <span [style]="'width: ' + progress + '%'"></span>
+    </div>
+  }
+
+  @switch (screenIndex){
+  @case (0) {
+    <app-welcome></app-welcome>
+  }
+  @case (1) {
+    <app-phone></app-phone>
+  }
+  @case (2) {
+    <app-otp></app-otp>
+  }
+  @case (3) {
+    <app-username></app-username>
+  }
+  @case (4) {
+    <app-email></app-email>
+  }
+  @case (5) {
+    <app-user-image></app-user-image>
+  }
+  @case (6) {
+    <app-age></app-age>
+  }
+  @case (7) {
+    <app-gender></app-gender>
+  }
+  @case (8) {
+    <app-height></app-height>
+  }
+  @case (9) {
+    <app-activity></app-activity>
+  }
+  @case (10) {
+    <app-category></app-category>
+  }
+}
+</div>
+
+<div class="pagination">
+  @for(page of pages;track page){
+  <span (click)="changePageIndex(page)">{{ page }}</span>
+  }
+</div>

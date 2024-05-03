@@ -1,0 +1,45 @@
+.content {
+  h2 {
+    font-size: 24px;
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 30px;
+  }
+  .input {
+    width: 100%;
+    input {
+      width: 100%;
+      border: none;
+      height: 58px;
+      border-radius: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 6px 20px;
+      font-size: 18px;
+      box-shadow: none;
+      &::placeholder {
+        opacity: 0.7;
+      }
+    }
+  }
+  .divider {
+    min-width: 250px;
+    min-width: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px auto;
+    .line {
+      height: 1.5px;
+      width: 40%;
+      background-color: black;
+      display: inline-block;
+      opacity: 0.2;
+    }
+    .text {
+      margin: 0 10px;
+      font-weight: 600;
+    }
+  }
+}
