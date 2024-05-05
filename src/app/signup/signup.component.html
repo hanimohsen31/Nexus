@@ -1,49 +1,50 @@
 <div class="signup">
-  @if(screenIndex > 0){
-    <div class="progress w-100 mt-3 mb-5">
+  @if(showBar){
+  <div class="header w-100 mt-3 mb-5">
+    <svg (click)="goBack()" width="16" height="14" viewBox="0 0 16 14" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M14.8571 5.83846H3.42857L7.18857 1.99736C7.29569 1.88883 7.38071 1.7597 7.43873 1.61743C7.49675 1.47516 7.52663 1.32256 7.52663 1.16843C7.52663 1.01431 7.49675 0.861708 7.43873 0.719437C7.38071 0.577165 7.29569 0.448037 7.18857 0.339502C6.97444 0.122053 6.68478 0 6.38286 0C6.08093 0 5.79127 0.122053 5.57714 0.339502L0.674286 5.35979C0.245043 5.79567 0.00255176 6.38769 0 7.00597V7.00597C0.00556181 7.6202 0.247822 8.20746 0.674286 8.64048L5.57714 13.6608C5.6837 13.7689 5.81006 13.8544 5.94899 13.9127C6.08793 13.9709 6.23673 14.0005 6.3869 14C6.53706 13.9994 6.68565 13.9687 6.82419 13.9095C6.96272 13.8503 7.08848 13.7638 7.19429 13.6549C7.30009 13.5461 7.38388 13.417 7.44085 13.2751C7.49783 13.1331 7.52688 12.9811 7.52635 12.8277C7.52582 12.6743 7.49572 12.5225 7.43776 12.381C7.3798 12.2395 7.29513 12.111 7.18857 12.0029L3.42857 8.17348H14.8571C15.1602 8.17348 15.4509 8.05047 15.6653 7.83152C15.8796 7.61257 16 7.31561 16 7.00597C16 6.69633 15.8796 6.39937 15.6653 6.18042C15.4509 5.96147 15.1602 5.83846 14.8571 5.83846Z" />
+    </svg>
+    <div class="progress">
       <span [style]="'width: ' + progress + '%'"></span>
     </div>
+  </div>
   }
 
-  @switch (screenIndex){
-  @case (0) {
-    <app-welcome></app-welcome>
-  }
-  @case (1) {
-    <app-phone></app-phone>
-  }
-  @case (2) {
-    <app-otp></app-otp>
-  }
-  @case (3) {
-    <app-username></app-username>
-  }
-  @case (4) {
-    <app-email></app-email>
-  }
-  @case (5) {
-    <app-user-image></app-user-image>
-  }
-  @case (6) {
-    <app-age></app-age>
-  }
-  @case (7) {
-    <app-gender></app-gender>
-  }
-  @case (8) {
-    <app-height></app-height>
-  }
-  @case (9) {
-    <app-activity></app-activity>
-  }
-  @case (10) {
-    <app-category></app-category>
-  }
-}
-</div>
-
-<div class="pagination">
-  @for(page of pages;track page){
-  <span (click)="changePageIndex(page)">{{ page }}</span>
-  }
+  <!-- @switch (screenIndex){
+    @case (0) {
+      <app-phone class="w-100"></app-phone>
+    }
+    @case (1) {
+      <app-otp class="w-100"></app-otp> 10
+    }
+    @case (2) {
+      <app-category class="w-100"></app-category>
+    }
+    @case (3) {
+      <app-username class="w-100"></app-username>
+    }
+    @case (4) {
+      <app-email class="w-100"></app-email>
+    }
+    @case (5) {
+      <app-age class="w-100"></app-age>
+    }
+    @case (6) {
+      <app-gender class="w-100"></app-gender>
+    }
+    @case (7) {
+      <app-height class="w-100"></app-height>
+    }
+    @case (8) {
+      <app-activity class="w-100"></app-activity>
+    }
+    @case (9) {
+      <app-user-image class="w-100"></app-user-image>
+    }
+    @case (10) {
+      <app-finish class="w-100"></app-finish>
+    }
+  } -->
+  <router-outlet></router-outlet>
 </div>

@@ -1,0 +1,61 @@
+.card-container {
+  .card {
+    overflow: hidden;
+    border: none;
+
+    img {
+      transform: scale(1.01);
+      height: 160px;
+      object-fit: cover;
+    }
+
+    .card-body {
+      background-color: yellow;
+
+      .records-container {
+        max-height: 250px;
+        overflow: scroll;
+        display: flex;
+        flex-direction: column-reverse;
+
+        .counter {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          input {
+            padding-left: 0;
+            padding-right: 0;
+            text-align: center;
+            background-color: black;
+            color: white;
+
+            &:focus {
+              background-color: black;
+              color: white;
+            }
+          }
+
+          select {
+            padding-top: 6px;
+            padding-bottom: 6px;
+            border-radius: 5px;
+            text-align: center;
+            background-color: black;
+            color: white;
+          }
+
+          button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 49.5%;
+            background-color: black;
+            color: white;
+            border: none;
+          }
+        }
+      }
+
+    }
+  }
+}

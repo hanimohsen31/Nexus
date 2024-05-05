@@ -5,13 +5,19 @@
     <p>We'd love to see you. Upload a photo for your dating journey.</p>
   </div>
 
-  <div class="img-container">
-    <img src="assets/images/Ellipse 8.png" alt="">
+  <div class="image-upload-container my-3">
+    <input type="file" id="file" accept="image/*" (change)="onFileSelected($event)" hidden>
+    <label for="file">
+      @if(!imageUrl){
+        <img src="assets/images/profile.png" alt="Upload Image">
+      }@else{
+        <img [src]="imageUrl" alt="Upload Image"/>
+      }
+    </label>
   </div>
 
   <app-action-button
-    [hasIcon]="true"
     label="Continue"
-    class="mt-4 w-100"
+    (click)="continue()"
   ></app-action-button>
 </div>

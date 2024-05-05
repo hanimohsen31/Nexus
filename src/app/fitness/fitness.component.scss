@@ -1,0 +1,36 @@
+.background {
+  position: fixed;
+  display: block;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  object-fit: cover;
+  z-index: -10;
+  opacity: 0.8;
+  background-color: black;
+  filter: contrast(1.5);
+}
+
+// -----------------------------------------------------
+
+.fitness {
+  .container {
+    .options {
+      color: white;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      a {
+        width: 90px;
+        height: 50px;
+        text-decoration: none;
+        text-transform: uppercase;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+}

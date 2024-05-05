@@ -1,0 +1,27 @@
+.content {
+    text-align: center;
+
+    h2 {
+        font-size: 24px;
+        text-align: center;
+        font-weight: 700;
+        margin-bottom: 20px;
+    }
+
+    .icon {
+        height: 60vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        svg {
+            height: 150px;
+            width: 150px;
+            background: var(--color1);
+            padding: 35px;
+            border-radius: 50%;
+            fill: white;
+        }
+    }
+
+}

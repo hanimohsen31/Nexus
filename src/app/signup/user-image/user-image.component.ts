@@ -1,11 +1,42 @@
 import { Component } from '@angular/core';
 import { ActionButtonComponent } from '../action-button/action-button.component';
-
+import { FileUploadModule } from 'primeng/fileupload';
+import { FormsModule } from '@angular/forms';
+import { MessageService } from 'primeng/api';
+import { ToastModule } from 'primeng/toast';
+import { SignupService } from './../signup.service';
 @Component({
   selector: 'app-user-image',
   standalone: true,
-  imports: [ActionButtonComponent],
+  imports: [FormsModule, FileUploadModule, ToastModule, ActionButtonComponent],
+  providers: [MessageService],
   templateUrl: './user-image.component.html',
   styleUrl: './user-image.component.scss',
 })
-export class UserImageComponent {}
+export class UserImageComponent {
+  imageUrl: any = '';
+
+  constructor(private SignupService: SignupService) { }
+
+  onFileSelected(event: any) {
+    const file: File = event.target.files[0];
+    if (file && file.type.match('image.*')) {
+      const reader = new FileReader();
+      reader.onload = (e: any) => {
+        this.imageUrl = e.target.result;
+      };
+      reader.readAsDataURL(file);
+    }
+  }
+
+  continue() {
+    this.SignupService.updateUserData('image', this.imageUrl);
+    
+    let category = this.SignupService.userData.getValue().category;
+    if (category == 'GYM') {
+      this.SignupService.nextPage('signup/finish', 20);
+    } else {
+      this.SignupService.nextPage('signup/finish', 10);
+    }
+  }
+}

@@ -5,6 +5,36 @@
     font-weight: 600;
     margin-bottom: 30px;
   }
+  .imgs {
+    justify-content: space-between;
+    width: 88%;
+    margin-bottom: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    img {
+      padding: 5px;
+      background: white;
+      border-radius: 50%;
+    }
+    .left {
+      flex-direction: column;
+      display: flex;
+      height: 260px;
+      justify-content: space-around;
+      align-items: end;
+      img {
+        &:last-child {
+          width: 51%;
+        }
+      }
+    }
+    .right {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+  }
   .input {
     width: 100%;
     input {

@@ -7,21 +7,17 @@
 
   <div class="input my-3">
     @for(option of categoryOptions;track categoryOptions){
-    <label for="option" class="my-2">
+    <label for="option" class="my-2" [class.selected]="input == option" (click)="selecetActivity(option)">
       {{ option }}
-      <input
-        class="radio"
-        [name]="option"
-        type="radio"
-        placeholder="Enter phone number"
-      />
+      <div class="circle">
+        <span></span>
+      </div>
     </label>
     }
   </div>
 
   <app-action-button
-    [hasIcon]="true"
     label="Continue"
-    class="mt-4 w-100"
+    (click)="continue()"
   ></app-action-button>
 </div>

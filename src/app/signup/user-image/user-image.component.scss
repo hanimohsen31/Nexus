@@ -37,3 +37,24 @@
     }
   }
 }
+
+.image-upload-container {
+  width: 100%;
+  label{
+    width: 100%;
+  }
+  img {
+    width: 350px;
+    max-width: 100%;
+    height: auto;
+    border: 2px dashed #ccc;
+    padding: 10px;
+    transition: transform 0.2s;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+}

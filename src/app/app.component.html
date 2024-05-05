@@ -1,1 +1,17 @@
 <router-outlet></router-outlet>
+
+<!-- ------------------------- footer ------------------------- -->
+<div class="footerContainer">
+    <nav class="nav">
+        @for(route of routes ; track route){
+        <a [routerLink]=" '/'+ route " class="nav-item" routerLinkActive="active">
+            <span class="text-uppercase">{{route}}</span>
+            @if(route == currentRoute){
+            <div class="nav-indicator-wrapper">
+                <span class="nav-indicator"></span>
+            </div>
+            }
+        </a>
+        }
+    </nav>
+</div>

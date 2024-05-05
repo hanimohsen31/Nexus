@@ -9,6 +9,6 @@ export const appConfig: ApplicationConfig = {
   providers: [
     importProvidersFrom(BrowserModule),
     provideHttpClient(withInterceptorsFromDi()),
-    provideRouter(routes)
+    provideRouter(routes),
   ]
 };

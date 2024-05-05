@@ -1,0 +1,19 @@
+<img class="background" src="assets/images/bg2.jpg" alt="">
+<div class="fitness">
+    <div class="container">
+        @if(currentScreen == 'options'){
+        <!-- options screen -->
+        <div class="options my-5">
+        @for(elm of excercises;track elm){
+            <a class="card m-2 p-1" (click)="updateCurrentScreen(elm)">{{ elm }}</a>
+            }
+        </div>
+        }@else {
+        <!-- excercises screen -->
+        @for(elm of currentExcercisesList;track elm){
+            <app-card [title]="elm?.title" [ex]="elm?.ex" [img]="elm?.img" [desc]="elm?.desc"></app-card>
+            }
+        }
+    </div>
+    <!-- <app-footer></app-footer> -->
+</div>

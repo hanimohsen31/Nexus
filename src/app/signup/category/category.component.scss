@@ -1,20 +1,24 @@
 .content {
   text-align: center;
+
   h2 {
     font-size: 24px;
     text-align: center;
     font-weight: 700;
     margin-bottom: 20px;
   }
+
   .claimer {
     p {
       margin: 0;
       font-weight: 500;
+
       &:last-child {
         font-weight: 700;
       }
     }
   }
+
   label {
     width: 100%;
     border: none;
@@ -28,5 +32,35 @@
     box-shadow: none;
     background-color: #F0E4E6;
     font-weight: 500;
+
+    input {
+      display: none;
+    }
+
+    .circle {
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: white;
+    }
+
+    &.selected {
+      background-color: var(--color1);
+      color: white;
+      font-weight: 600;
+
+      .circle {
+        span {
+          width: 15px;
+          height: 15px;
+          border-radius: 50%;
+          background-color: var(--color1);
+        }
+      }
+    }
   }
+
 }
