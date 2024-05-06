@@ -16,6 +16,7 @@ export class GenderComponent {
   constructor(private SignupService: SignupService) { }
 
   ngOnInit() {
+    this.SignupService.updateShowBar(true);
     this.input = this.SignupService.userData.getValue().gender || 'male';
   }
 
@@ -27,6 +28,6 @@ export class GenderComponent {
 
   continue() {
     this.SignupService.updateUserData('gender', this.input);
-    this.SignupService.nextPage('signup/height', 10);
+    this.SignupService.nextPage('signup/height');
   }
 }

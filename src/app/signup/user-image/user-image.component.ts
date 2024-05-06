@@ -16,7 +16,11 @@ import { SignupService } from './../signup.service';
 export class UserImageComponent {
   imageUrl: any = '';
 
-  constructor(private SignupService: SignupService) { }
+  constructor(private SignupService: SignupService) {}
+
+  ngOnInit() {
+    this.SignupService.updateShowBar(true);
+  }
 
   onFileSelected(event: any) {
     const file: File = event.target.files[0];
@@ -31,12 +35,6 @@ export class UserImageComponent {
 
   continue() {
     this.SignupService.updateUserData('image', this.imageUrl);
-    
-    let category = this.SignupService.userData.getValue().category;
-    if (category == 'GYM') {
-      this.SignupService.nextPage('signup/finish', 20);
-    } else {
-      this.SignupService.nextPage('signup/finish', 10);
-    }
+    this.SignupService.nextPage('signup/finish');
   }
 }

@@ -8,15 +8,16 @@ import { FormsModule } from '@angular/forms';
   standalone: true,
   imports: [FormsModule, ActionButtonComponent],
   templateUrl: './height.component.html',
-  styleUrl: './height.component.scss'
+  styleUrl: './height.component.scss',
 })
 export class HeightComponent {
   input: any = '';
   error: boolean = false;
 
-  constructor(private SignupService: SignupService) { }
+  constructor(private SignupService: SignupService) {}
 
   ngOnInit() {
+    this.SignupService.updateShowBar(true);
     this.input = this.SignupService.userData.getValue().height;
   }
 
@@ -24,8 +25,7 @@ export class HeightComponent {
     if (!this.input || +this.input < 60 || +this.input > 250) {
       this.error = true;
       return false;
-    }
-    else {
+    } else {
       return true;
     }
   }
@@ -33,7 +33,13 @@ export class HeightComponent {
   continue() {
     if (this.checkInput()) {
       this.SignupService.updateUserData('height', this.input);
-      this.SignupService.nextPage('signup/activity' , 10);
+      let category = this.SignupService.userData.getValue()?.category
+      if (category == 'Trainer') {
+        this.SignupService.updateUserData('activity', 'Extra Active');
+        this.SignupService.nextPage('signup/image');
+      } else {
+        this.SignupService.nextPage('signup/activity');
+      }
     }
   }
 }

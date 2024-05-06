@@ -17,6 +17,7 @@ export class AgeComponent {
   constructor(private SignupService: SignupService) { }
 
   ngOnInit() {
+    this.SignupService.updateShowBar(true);
     this.input = this.SignupService.userData.getValue().age;
   }
 
@@ -33,7 +34,7 @@ export class AgeComponent {
   continue() {
     if (this.checkInput()) {
       this.SignupService.updateUserData('age', this.input);
-      this.SignupService.nextPage('signup/gender', 10);
+      this.SignupService.nextPage('signup/gender');
     }
   }
 }

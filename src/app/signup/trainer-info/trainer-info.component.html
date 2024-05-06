@@ -1,0 +1,20 @@
+<div class="content">
+  <h2>Bio</h2>
+
+  <div class="claimer">
+    <p>We'll need some information about you</p>
+  </div>
+
+  <div class="input my-3">
+    <textarea name="" id="" class="form-control" [(ngModel)]="input"
+      placeholder="Enter a breaf about yourself">
+    </textarea>
+  </div>
+
+  @if(error){
+  <p class="mt-2 mb-0 p-0 text-danger text-center opacity-75">Please enter a valid email</p>
+  }
+
+  <app-action-button label="Skip" (click)="skip()"></app-action-button>
+  <app-action-button label="Continue" (click)="continue()"></app-action-button>
+</div>

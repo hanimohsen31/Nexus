@@ -17,6 +17,7 @@ export class EmailComponent {
   constructor(private SignupService: SignupService) {}
 
   ngOnInit() {
+    this.SignupService.updateShowBar(true);
     this.input = this.SignupService.userData.getValue().email;
   }
 
@@ -36,12 +37,8 @@ export class EmailComponent {
   continue() {
     if (this.checkInput()) {
       this.SignupService.updateUserData('email', this.input);
-      let category = this.SignupService.userData.getValue().category;
-      if(category == 'GYM'){
-        this.SignupService.nextPage('signup/image',20);
-      }else {
-        this.SignupService.nextPage('signup/age',10);
-      }
+      // navigate
+      this.SignupService.nextPage('signup/password');
     }
   }
 }

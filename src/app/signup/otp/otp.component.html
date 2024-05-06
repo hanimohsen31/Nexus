@@ -11,22 +11,17 @@
   </div>
 
   @if(error){
-    <p class="mt-2 mb-0 p-0 text-danger text-center opacity-75">Wrong OTP</p>
+  <p class="mt-2 mb-0 p-0 text-danger text-center opacity-75">Wrong OTP</p>
   }
   @if(firebaseError){
-    <p class="mt-2 mb-0 p-0 text-danger text-center opacity-75">{{firebaseError}}</p>
+  <p class="mt-2 mb-0 p-0 text-danger text-center opacity-75">{{firebaseError}}</p>
   }
 
   <div class="resend">
     <p>Didn't receive OTP?</p>
-    <p (click)="reSendOtp()" >Resend Code</p>
+    <p (click)="reSendOtp()">Resend Code</p>
   </div>
 
-  <app-action-button
-    [hasIcon]="true"
-    label="Continue"
-    (click)="continue()"
-  ></app-action-button>
-
+  <app-action-button label="Continue" (click)="continue()"></app-action-button>
   <div class="d-none" id="sign-in-button"></div>
 </div>

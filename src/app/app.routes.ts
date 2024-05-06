@@ -6,28 +6,33 @@ import { FoodComponent } from './food/food.component';
 import { FitnessComponent } from './fitness/fitness.component';
 import { ProfileComponent } from './profile/profile.component';
 import { SIGNUP_ROUTES } from './signup/signup.routes';
+import { authGuard } from './store/auth.guard';
 
 export const routes: Routes = [
   {
     path: 'signup',
     component: SignupComponent,
-    children : [...SIGNUP_ROUTES]
+    children: [...SIGNUP_ROUTES],
   },
   {
     path: 'home',
     component: HomeComponent,
+    canActivate: [authGuard],
   },
   {
     path: 'food',
     component: FoodComponent,
+    canActivate: [authGuard],
   },
   {
     path: 'fitness',
     component: FitnessComponent,
+    canActivate: [authGuard],
   },
   {
     path: 'profile',
     component: ProfileComponent,
+    canActivate: [authGuard],
   },
   {
     path: '',

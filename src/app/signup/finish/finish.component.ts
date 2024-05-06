@@ -7,25 +7,27 @@ import { Router } from '@angular/router';
   standalone: true,
   imports: [],
   templateUrl: './finish.component.html',
-  styleUrl: './finish.component.scss'
+  styleUrl: './finish.component.scss',
 })
 export class FinishComponent {
-  constructor(private SignupService: SignupService, private Router: Router) { }
+  error = false
+  constructor(private SignupService: SignupService, private Router: Router) {}
 
   ngOnInit() {
-    this.saveUserData()
+    this.SignupService.updateShowBar(false);
+    this.signUpUser();
   }
 
-  saveUserData() {
-    this.SignupService.saveUserData().subscribe({
-      next: res => { console.log(res); this.redirect() },
-      error: err => this.redirect()
-    })
+  signUpUser() {
+    this.SignupService.signUpUser().subscribe({
+      next: (res: any) => this.redirect('/home') ,
+      error : (err : any) => this.redirect('/signup') ,
+    });
   }
 
-  redirect() {
+  redirect(route : string) {
     setTimeout(() => {
-      this.Router.navigate(['/home'])
+      this.Router.navigate([route]);
     }, 1000);
   }
 }

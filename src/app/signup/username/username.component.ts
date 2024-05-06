@@ -17,6 +17,7 @@ export class UsernameComponent {
   constructor(private SignupService: SignupService) { }
 
   ngOnInit() {
+    this.SignupService.updateShowBar(true);
     this.input = this.SignupService.userData.getValue().name;
   }
 
@@ -32,13 +33,8 @@ export class UsernameComponent {
   continue() {
     if (this.checkInput()) {
       this.SignupService.updateUserData('name', this.input);
-
-      let category = this.SignupService.userData.getValue().category;
-      if (category == 'GYM') {
-        this.SignupService.nextPage('signup/email', 20);
-      } else {
-        this.SignupService.nextPage('signup/email', 10);
-      }
+      // navigate
+      this.SignupService.nextPage('signup/email');
     }
   }
 }

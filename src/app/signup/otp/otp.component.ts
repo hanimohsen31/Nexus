@@ -18,6 +18,7 @@ export class OtpComponent {
   constructor(private SignupService: SignupService) {}
 
   ngOnInit() {
+    this.SignupService.updateShowBar(true);
     this.phone = this.SignupService.userData.getValue().phone;
     this.input = this.SignupService.userData.getValue().otp;
     this.SignupService.otpErrorMsg$.subscribe({
@@ -40,12 +41,13 @@ export class OtpComponent {
 
   continue() {
     if (this.checkInput()) {
-      this.SignupService.updateUserData('otp', this.input);
+      // this.SignupService.updateUserData('otp', this.input);
       this.SignupService.confirmationResult(this.input);
     }
   }
 
   reSendOtp(){
     this.SignupService.signInWithPhoneNumber(this.phone)
+    // this.nextPage('signup/username'); in service
   }
 }

@@ -11,38 +11,47 @@ import { SignupService } from './../signup.service';
   styleUrl: './phone.component.scss',
 })
 export class PhoneComponent {
-  input: string = '';
+  input: any = '';
   error: boolean = false;
-  firebaseError = ""
+  errorMsg = '';
+  firebaseError = '';
 
-  constructor(private SignupService: SignupService) { }
+  constructor(private SignupService: SignupService) {}
 
   ngOnInit() {
-    this.input = this.SignupService.userData.getValue().phone;
+    this.SignupService.updateShowBar(false);
     this.SignupService.mobileErrorMsg$.subscribe({
-      next: (res: any) => res ? (this.error = true, this.firebaseError = res) : null
-    })
+      next: (res: any) =>
+        res ? ((this.error = true), (this.firebaseError = res)) : null,
+    });
   }
 
   checkInput() {
-    let phoneNumberRegex = /^\+(?:[0-9] ?){6,14}[0-9]$/;
-    phoneNumberRegex = /^01\d{9}$/; // egypt only
+    let phoneNumberRegex = /^01\d{9}$/; // egypt only
     if (!this.input) {
       this.error = true;
+      this.errorMsg = 'Please enter a valid number';
       return false;
     }
-    if (!phoneNumberRegex.test(this.input)) {
+    let number: any = `0${this.input}`;
+    if (!phoneNumberRegex.test(number)) {
       this.error = true;
+      this.errorMsg = 'Not Valid Egyptian Number';
       return false;
     }
     return true;
   }
 
   continue() {
+    let number: any = `0${this.input}`;
     if (this.checkInput()) {
-      this.SignupService.updateUserData('phone', this.input);
-      this.SignupService.signInWithPhoneNumber(this.input)
+      this.SignupService.updateUserData('phone', number);
+      this.SignupService.signInWithPhoneNumber(number);
+      // this.nextPage('signup/otp') in service
     }
   }
 
+  goToLogin() {
+    this.SignupService.nextPage('signup/login', 0);
+  }
 }

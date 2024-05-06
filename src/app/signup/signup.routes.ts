@@ -10,6 +10,13 @@ import { GenderComponent } from './gender/gender.component';
 import { ActivityComponent } from './activity/activity.component';
 import { UserImageComponent } from './user-image/user-image.component';
 import { FinishComponent } from './finish/finish.component';
+import { GymPlansComponent } from './gym-plans/gym-plans.component';
+import { LoginComponent } from './login/login.component';
+import { PasswordComponent } from './password/password.component';
+import { GymInfoComponent } from './gym-info/gym-info.component';
+import { TrainerInfoComponent } from './trainer-info/trainer-info.component';
+import { GymWebsiteComponent } from './gym-website/gym-website.component';
+import { GymSocialMediaComponent } from './gym-social-media/gym-social-media.component';
 
 export const SIGNUP_ROUTES: Routes = [
   { path: 'phone', component: PhoneComponent },
@@ -17,6 +24,13 @@ export const SIGNUP_ROUTES: Routes = [
   { path: 'category', component: CategoryComponent },
   { path: 'username', component: UsernameComponent },
   { path: 'email', component: EmailComponent },
+  { path: 'gym-plans', component: GymPlansComponent },
+  { path: 'password', component: PasswordComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'gym-info', component: GymInfoComponent },
+  { path: 'trainer-info', component: TrainerInfoComponent },
+  { path: 'gym-website', component: GymWebsiteComponent },
+  { path: 'gym-social-media', component: GymSocialMediaComponent },
   { path: 'age', component: AgeComponent },
   { path: 'gender', component: GenderComponent },
   { path: 'height', component: HeightComponent },

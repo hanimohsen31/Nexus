@@ -7,5 +7,6 @@ export const environment = {
         storageBucket: "nexus-500.appspot.com",
         messagingSenderId: "1037292923263",
         appId: "1:1037292923263:web:f91c890e58a02f5574d24a"
-    }
+    },
+    baseUrl : "https//:baseUrl"
 }
