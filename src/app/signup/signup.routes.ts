@@ -1,9 +1,9 @@
 import { Routes } from '@angular/router';
-import { PhoneComponent } from './phone/phone.component';
-import { OtpComponent } from './otp/otp.component';
-import { CategoryComponent } from './category/category.component';
-import { UsernameComponent } from './username/username.component';
-import { EmailComponent } from './email/email.component';
+import { PhoneComponent } from './screens/phone.component'
+import { OtpComponent } from './screens/otp.component';
+import { CategoryComponent } from './screens/category.component';
+import { UsernameComponent } from './screens/username.component';
+import { EmailComponent } from './screens/email.component';
 import { AgeComponent } from './age/age.component';
 import { HeightComponent } from './height/height.component';
 import { GenderComponent } from './gender/gender.component';
@@ -12,7 +12,7 @@ import { UserImageComponent } from './user-image/user-image.component';
 import { FinishComponent } from './finish/finish.component';
 import { GymPlansComponent } from './gym-plans/gym-plans.component';
 import { LoginComponent } from './login/login.component';
-import { PasswordComponent } from './password/password.component';
+import { PasswordComponent } from './screens/password.component';
 import { GymInfoComponent } from './gym-info/gym-info.component';
 import { TrainerInfoComponent } from './trainer-info/trainer-info.component';
 import { GymWebsiteComponent } from './gym-website/gym-website.component';
