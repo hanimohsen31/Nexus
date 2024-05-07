@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { InputsFormComponent } from '../inputs-form/inputs-form.component';
+
 @Component({
-  selector: 'app-email',
+  selector: 'app-age',
   standalone: true,
   imports: [InputsFormComponent],
   template: ` <app-inputs-form
@@ -10,20 +11,20 @@ import { InputsFormComponent } from '../inputs-form/inputs-form.component';
     [hasCaptcha]="false"
     [hasSkip]="false"
     [isLoginPage]="false"
-    header="Email Address"
-    propKey="email"
-    nextRoute="password"
+    header="How old are you?"
+    propKey="age"
+    nextRoute="gender"
     imageUrl=""
-    claimer1="We'll need your email to stay in touch"
+    claimer1="Please provide your age in years"
     claimer2=""
     [inputs]="1"
-    placeholder1="johndoe@email.com"
+    placeholder1="Enter your age"
     placeholder2=""
     placeholder3=""
-    type1="email"
+    type1="number"
     type2=""
     type3=""
     [optionsList]="[]"
   ></app-inputs-form>`,
 })
-export class EmailComponent {}
+export class AgeComponent {}

@@ -1,29 +1,30 @@
 import { Component } from '@angular/core';
 import { InputsFormComponent } from '../inputs-form/inputs-form.component';
+
 @Component({
-  selector: 'app-email',
+  selector: 'app-user-image',
   standalone: true,
   imports: [InputsFormComponent],
   template: ` <app-inputs-form
     [showBar]="true"
     [showHeader]="true"
     [hasCaptcha]="false"
-    [hasSkip]="false"
+    [hasSkip]="true"
     [isLoginPage]="false"
-    header="Email Address"
-    propKey="email"
-    nextRoute="password"
+    header="Upload your photo"
+    propKey="image"
+    nextRoute="finish"
     imageUrl=""
-    claimer1="We'll need your email to stay in touch"
+    claimer1="We'd love to see you. Upload a photo for your dating journey."
     claimer2=""
-    [inputs]="1"
-    placeholder1="johndoe@email.com"
+    [inputs]="0"
+    placeholder1=""
     placeholder2=""
     placeholder3=""
-    type1="email"
+    type1=""
     type2=""
     type3=""
     [optionsList]="[]"
   ></app-inputs-form>`,
 })
-export class EmailComponent {}
+export class UserImageComponent {}

@@ -3,11 +3,12 @@ import { FormsModule } from '@angular/forms';
 import { ActionButtonComponent } from '../action-button/action-button.component';
 import { CommonModule } from '@angular/common';
 import { SignupService } from '../signup.service';
-
+import { MessageService } from 'primeng/api';
 @Component({
   selector: 'app-inputs-form',
   standalone: true,
   imports: [FormsModule, ActionButtonComponent, CommonModule],
+  providers: [MessageService],
   templateUrl: './inputs-form.component.html',
   styleUrl: './inputs-form.component.scss',
 })
@@ -27,11 +28,14 @@ export class InputsFormComponent {
   @Input() inputs: number = 1;
   @Input() placeholder1: string = '';
   @Input() placeholder2: string = '';
+  @Input() placeholder3: string = '';
   @Input() type1: string = '';
   @Input() type2: string = '';
+  @Input() type3: string = '';
   @Input() optionsList: any[] = [];
   mainInput: string = '';
   secondaryInput: string = '';
+  thirdInput: string = '';
   // errors
   error: boolean = false;
   errorMsg: string = '';

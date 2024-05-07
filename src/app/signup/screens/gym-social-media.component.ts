@@ -2,29 +2,29 @@ import { Component } from '@angular/core';
 import { InputsFormComponent } from '../inputs-form/inputs-form.component';
 
 @Component({
-  selector: 'app-username',
+  selector: 'app-gym-social-media',
   standalone: true,
   imports: [InputsFormComponent],
   template: ` <app-inputs-form
     [showBar]="true"
     [showHeader]="true"
     [hasCaptcha]="false"
-    [hasSkip]="false"
+    [hasSkip]="true"
     [isLoginPage]="false"
-    header="What's Your Name?"
-    propKey="name"
-    nextRoute="email"
+    header="Social media ? ..."
+    propKey="gymSocial"
+    nextRoute="image"
     imageUrl=""
-    claimer1="Let's Get to Know Each Other"
+    claimer1="Add your GYM Social media"
     claimer2=""
-    [inputs]="0"
-    placeholder1="John Doe"
-    placeholder2=""
-    placeholder3=""
+    [inputs]="3"
+    placeholder1="https://www.facebook.com/Gym"
+    placeholder2="https://www.instagram.com/Gym"
+    placeholder3="https://www.tiktok.com/Gym"
     type1="string"
-    type2=""
-    type3=""
+    type2="string"
+    type3="string"
     [optionsList]="[]"
   ></app-inputs-form>`,
 })
-export class UsernameComponent {}
+export class GymSocialMediaComponent {}

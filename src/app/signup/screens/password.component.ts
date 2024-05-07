@@ -1,21 +1,30 @@
 import { Component } from '@angular/core';
 import { InputsFormComponent } from '../inputs-form/inputs-form.component';
-
 @Component({
   selector: 'app-password',
   standalone: true,
   imports: [InputsFormComponent],
   template: `
     <app-inputs-form
+      [showBar]="true"
+      [showHeader]="true"
+      [hasCaptcha]="false"
+      [hasSkip]="false"
+      [isLoginPage]="false"
       header="Choose A Password..."
-      claimer1="Be Sure to Pick a strong one"
       propKey="password"
-      [inputs]="2"
-      type1="password"
-      placeholder1="Enter a password"
-      type2="password"
-      placeholder2="Confirm password"
       nextRoute="category"
+      imageUrl=""
+      claimer1="Be Sure to Pick a strong one"
+      claimer2=""
+      [inputs]="2"
+      placeholder1="Enter a password"
+      placeholder2="Confirm password"
+      placeholder3=""
+      type1="password"
+      type2="password"
+      type3=""
+      [optionsList]="[]"
     ></app-inputs-form>
   `,
 })
