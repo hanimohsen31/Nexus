@@ -1,0 +1,16 @@
+{
+  "auth/signup/standalone": {
+    "status": "200",
+    "message": "success"
+  },
+  "auth/signup/gym": {
+    "status": "200",
+    "message": "success"
+  },
+  "auth/signin": {
+    "status": "200",
+    "message": "success",
+    "token": "EncryptedToken",
+    "name": "Hani Mohsen"
+  }
+}

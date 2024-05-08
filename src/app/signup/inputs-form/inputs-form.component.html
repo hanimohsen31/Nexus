@@ -132,6 +132,9 @@
   <p *ngIf="error" class="errorMsg mt-2">
     {{ errorMsg }}
   </p>
+  <p *ngIf="firebaseError" class="errorMsg mt-2">
+    {{ firebaseError }}
+  </p>
 
   <!-- ---------------------------------- finish icon ----------------------------------------- -->
   <div *ngIf="propKey == 'finish'" class="finish-icon">

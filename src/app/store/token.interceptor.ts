@@ -1,5 +1,6 @@
 import { HttpEvent, HttpInterceptorFn } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 export const TokenInterceptor: HttpInterceptorFn = (
   request,
@@ -10,9 +11,13 @@ export const TokenInterceptor: HttpInterceptorFn = (
   const newRequest = request.clone({
     setHeaders: {
       // Authorization: `Bearer ${token}`,
-      Madara : `Bearer ${token}`
+      Madara: `Bearer ${token}`,
     },
   });
 
-  return next(newRequest);
+  let exceptions = ['auth/signup/standalone', 'auth/signup/gym', 'auth/signin'];
+  let isException = exceptions.find((elm) => {
+    `${environment.baseUrl}${elm}` == request.url;
+  });
+  return isException ? next(request) : next(newRequest);
 };

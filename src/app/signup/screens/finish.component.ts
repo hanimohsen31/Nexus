@@ -37,16 +37,26 @@ export class FinishComponent {
   constructor(private signupService: SignupService, private router: Router) {}
 
   ngOnInit() {
-    this.redirect('home');
-    // this.signUpUser();
+    // this.redirect('home');
+    this.signUpUser();
   }
 
-  // signUpUser() {
-  //   this.SignupService.signUpUser().subscribe({
-  //     next: (res: any) => this.redirect('/home') ,
-  //     error : (err : any) => this.redirect('/signup') ,
-  //   });
-  // }
+  signUpUser() {
+    this.signupService.signUpUser().subscribe({
+      next: (res: any) => {
+        // console.log("finisheed");
+        // console.log(res);
+        this.updateLocalStatus(res);
+        this.redirect('/home');
+      },
+      error: (err: any) => this.redirect('/signup'),
+    });
+  }
+
+  updateLocalStatus(token: any) {
+    this.signupService.updateIsLoggedIn(true);
+    this.signupService.setToken(token);
+  }
 
   redirect(route: string) {
     setTimeout(() => {

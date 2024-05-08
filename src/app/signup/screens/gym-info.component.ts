@@ -17,7 +17,7 @@ import { InputsFormComponent } from '../inputs-form/inputs-form.component';
     imageUrl=""
     claimer1="Tell us your GYM Adress"
     claimer2=""
-    [inputs]="0"
+    [inputs]="1"
     placeholder1="34 model st. New York"
     placeholder2=""
     placeholder3=""

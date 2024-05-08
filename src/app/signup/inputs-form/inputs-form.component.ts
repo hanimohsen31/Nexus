@@ -4,6 +4,7 @@ import { ActionButtonComponent } from '../action-button/action-button.component'
 import { CommonModule } from '@angular/common';
 import { SignupService } from '../signup.service';
 import { MessageService } from 'primeng/api';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-inputs-form',
   standalone: true,
@@ -41,7 +42,7 @@ export class InputsFormComponent {
   errorMsg: string = '';
   firebaseError: string = '';
   // -------------------------- start functions --------------------------
-  constructor(private signupService: SignupService) {}
+  constructor(private signupService: SignupService, private router: Router) {}
 
   ngOnInit() {
     if (this.propKey == 'phone') this.getPhoneFirebaseError();
@@ -51,7 +52,8 @@ export class InputsFormComponent {
   }
 
   ngOnDestroy() {
-    console.log('destroyed');
+    console.log('Destroyed');
+    // console.log(this.signupService.userData.getValue())
   }
   // -------------------------- firebase errors --------------------------
   getPhoneFirebaseError() {
@@ -81,8 +83,6 @@ export class InputsFormComponent {
   checkPhoneInput() {
     // egypt only
     let phoneNumberRegex = /^01\d{9}$/;
-    // let number: any = `${this.mainInput}`;
-    // console.log(number);
     if (!phoneNumberRegex.test(this.phoneModifiedInput())) {
       this.error = true;
       this.errorMsg = 'Not Valid Egyptian Number';
@@ -223,11 +223,11 @@ export class InputsFormComponent {
 
   navigateInCategory() {
     let category = this.signupService.userData.getValue()?.category;
-    if (category.toLocaleLowerCase() == 'Trainee'.toLocaleLowerCase()) {
+    if (category.toLowerCase() == 'Trainee'.toLowerCase()) {
       this.signupService.nextPage('signup/age');
-    } else if (category.toLocaleLowerCase() == 'Trainer'.toLocaleLowerCase()) {
-      this.signupService.nextPage('signup/trainer-info'.toLocaleLowerCase());
-    } else if (category.toLocaleLowerCase() == 'GYM'.toLocaleLowerCase()) {
+    } else if (category.toLowerCase() == 'Trainer'.toLowerCase()) {
+      this.signupService.nextPage('signup/trainer-info'.toLowerCase());
+    } else if (category.toLowerCase() == 'GYM'.toLowerCase()) {
       this.signupService.nextPage('signup/gym-info');
     }
   }
@@ -246,9 +246,17 @@ export class InputsFormComponent {
     this.signupService.updateUserData(this.propKey, this.mainInput);
   }
 
+  updateLocalStatus(token: any) {
+    this.signupService.updateIsLoggedIn(true);
+    this.signupService.setToken(token);
+  }
+
   logIn() {
     this.signupService.login(this.mainInput, this.secondaryInput).subscribe({
-      next: (res: any) => console.log(res),
+      next: (res: any) => {
+        this.updateLocalStatus(res);
+        this.router.navigate(['/home']);
+      },
       error: (err: any) => console.log(err),
     });
   }

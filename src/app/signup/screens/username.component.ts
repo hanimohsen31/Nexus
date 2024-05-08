@@ -17,7 +17,7 @@ import { InputsFormComponent } from '../inputs-form/inputs-form.component';
     imageUrl=""
     claimer1="Let's Get to Know Each Other"
     claimer2=""
-    [inputs]="0"
+    [inputs]="1"
     placeholder1="John Doe"
     placeholder2=""
     placeholder3=""

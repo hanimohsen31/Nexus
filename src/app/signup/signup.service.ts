@@ -65,16 +65,17 @@ export class SignupService {
     let data = this.userData.getValue();
     let url = environment.baseUrl;
     let finalData = {};
-    if (data.category == 'Trainee') {
+    if (data.category.toLowerCase() == 'Trainee'.toLowerCase()) {
       url += 'auth/signup/standalone';
-    } else if (data.category == 'Trainer') {
+      finalData = data;
+    } else if (data.category.toLowerCase() == 'Trainer'.toLowerCase()) {
       url += 'auth/signup/standalone';
       finalData = data;
       // data = {
       //   trainer: { ...trainerData },
       //   owner: { ...userData },
       // };
-    } else if (data.category == 'Gym') {
+    } else if (data.category.toLowerCase() == 'Gym'.toLowerCase()) {
       url += 'auth/signup/gym';
       finalData = {
         gym: {
