@@ -44,9 +44,7 @@ export class FinishComponent {
   signUpUser() {
     this.signupService.signUpUser().subscribe({
       next: (res: any) => {
-        // console.log("finisheed");
-        // console.log(res);
-        this.updateLocalStatus(res);
+        this.updateLocalStatus(res?.token);
         this.redirect('/home');
       },
       error: (err: any) => this.redirect('/signup'),

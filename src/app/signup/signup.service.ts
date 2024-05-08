@@ -154,7 +154,7 @@ export class SignupService {
 
   checkRoutes() {
     let userData = this.userData.getValue()?.phone;
-    userData ? null : this.nextPage('signup', 0, 'reset');
+    userData ? null : this.nextPage('signup/login', 0, 'reset');
   }
   // ---------------------------- send otp ------------------------------------
   otpSent = new BehaviorSubject(false);

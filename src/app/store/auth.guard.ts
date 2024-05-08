@@ -23,7 +23,7 @@ export const authGuard: CanActivateFn = (
   if (signupService.isLoggedIn.getValue()) {
     return true;
   } else {
-    router.navigate(['/signup/phone']);
+    router.navigate(['/signup/login']);
     return false;
   }
 };
