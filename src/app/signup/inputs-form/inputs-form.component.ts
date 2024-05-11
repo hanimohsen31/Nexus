@@ -3,13 +3,13 @@ import { FormsModule } from '@angular/forms';
 import { ActionButtonComponent } from '../action-button/action-button.component';
 import { CommonModule } from '@angular/common';
 import { SignupService } from '../../store/signup.service';
-import { MessageService } from 'primeng/api';
+// import { MessageService } from 'primeng/api';
 import { Router } from '@angular/router';
 @Component({
   selector: 'app-inputs-form',
   standalone: true,
   imports: [FormsModule, ActionButtonComponent, CommonModule],
-  providers: [MessageService],
+  providers: [],
   templateUrl: './inputs-form.component.html',
   styleUrl: './inputs-form.component.scss',
 })

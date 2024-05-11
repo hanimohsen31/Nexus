@@ -92,16 +92,3 @@ tr {
     display: none;
   }
 }
-
-
-
-:host ::ng-deep {
-  .p-progressbar {
-      height: .5rem;
-      background-color: #D8DADC;
-
-      .p-progressbar-value {
-          background-color: #607D8B;
-      }
-  }
-}
