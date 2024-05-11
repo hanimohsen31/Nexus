@@ -7,7 +7,7 @@ import {
   UrlTree,
 } from '@angular/router';
 import { Observable } from 'rxjs';
-import { SignupService } from '../signup/signup.service';
+import { SignupService } from './signup.service';
 
 export const authGuard: CanActivateFn = (
   route: ActivatedRouteSnapshot,

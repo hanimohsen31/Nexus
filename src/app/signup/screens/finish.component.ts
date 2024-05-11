@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { InputsFormComponent } from '../inputs-form/inputs-form.component';
-import { SignupService } from '../signup.service';
+import { SignupService } from '../../store/signup.service';
 import { Router } from '@angular/router';
 
 @Component({

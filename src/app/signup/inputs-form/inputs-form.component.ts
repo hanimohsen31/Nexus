@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ActionButtonComponent } from '../action-button/action-button.component';
 import { CommonModule } from '@angular/common';
-import { SignupService } from '../signup.service';
+import { SignupService } from '../../store/signup.service';
 import { MessageService } from 'primeng/api';
 import { Router } from '@angular/router';
 @Component({

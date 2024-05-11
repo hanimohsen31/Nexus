@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { SignupService } from './signup.service';
+import { SignupService } from '../store/signup.service';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 

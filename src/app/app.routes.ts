@@ -17,22 +17,22 @@ export const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent,
-    canActivate: [authGuard],
+    // canActivate: [authGuard],
   },
   {
     path: 'food',
     component: FoodComponent,
-    canActivate: [authGuard],
+    // canActivate: [authGuard],
   },
   {
     path: 'fitness',
     component: FitnessComponent,
-    canActivate: [authGuard],
+    // canActivate: [authGuard],
   },
   {
     path: 'profile',
     component: ProfileComponent,
-    canActivate: [authGuard],
+    // canActivate: [authGuard],
   },
   {
     path: '',
